@@ -11,7 +11,11 @@ import SwiftUI
 struct int_bonprixApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RouterView {
+                let viewModel = ProductListViewModel(productService: ProductService.shared,
+                                                     imageService: ImageService.shared)
+                ProductListView(viewModel: viewModel)
+            }
         }
     }
 }
